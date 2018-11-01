@@ -24,7 +24,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
-    - git >= 2.19
+    - git >=2.19
     - make
     - python
     - setuptools
