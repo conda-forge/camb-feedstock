@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. activate ${CONDA_PREFIX}
-
 EXTRA_FFLAGS=-ffast-math make camb
 
 make clean
