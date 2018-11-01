@@ -18,8 +18,8 @@ source:
     - symbolic.py.patch
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
+  skip: true
 
 requirements:
   build:
