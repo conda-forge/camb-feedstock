@@ -37,9 +37,9 @@ Features:
 Current build status
 ====================
 
-![Linux disabled](https://img.shields.io/badge/linux-disabled-lightgrey.svg)
-![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
-![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/camb-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/camb-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/camb-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/camb-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/camb-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/camb-feedstock/branch/master)
 
 Current release info
 ====================
