@@ -33,13 +33,6 @@ requirements:
     - setuptools
     - pip
 
-test:
-  files:
-    - params.ini  # [win]
-  source_files:
-    - camb  # [win]
-    - HighLExtrapTemplate_lenspotentialCls.dat  # [win]
-
 outputs:
   - name: camb
     script: install-camb.sh  # [not win]
@@ -53,9 +46,10 @@ outputs:
         - m2w64-gcc-libs  # [win]
     test:
       files:
-        - params.ini  # [not win]
+        - params.ini
       commands:
         - camb params.ini  # [not win]
+      script: test_camb.bat  # [win]
 
   - name: pycamb
     script: install-pycamb.sh  # [not win]
