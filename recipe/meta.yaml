@@ -45,6 +45,9 @@ outputs:
       run:
         - m2w64-gcc-libs  # [win]
     test:
+      files:
+        - params.ini
+        - test_camb.sh
       script: test_camb.bat  # [win]
       script: test_camb.sh  # [not win]
   
@@ -71,6 +74,9 @@ outputs:
         - {{ compiler('fortran') }}  # [not win]
         - m2w64-gcc-libs  # [win]
     test:
+      files:
+        - test_pycamb.sh
+        - test_pycamb.py
       script: test_pycamb.sh  # [not win]
       script: test_pycamb.bat  # [win]
 
