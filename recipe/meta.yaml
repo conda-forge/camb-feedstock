@@ -57,8 +57,6 @@ outputs:
         - {{ compiler('fortran') }}  # [not win]
         - m2w64-gcc-toolchain  # [win]
     test:
-      imports:
-        - camb
       files:
         - test_camb.py
       script: test_pycamb.py
