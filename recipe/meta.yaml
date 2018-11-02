@@ -27,7 +27,7 @@ requirements:
   build:
     - {{ compiler('c') }}  # [not win]
     - {{ compiler('fortran') }}  # [not win]
-    - m2w64-toolchain # [win]
+    - m2w64-toolchain  # [win]
     - git  # [not win]
     - m2-git  # [win]
     - make  # [not win]
