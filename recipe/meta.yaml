@@ -61,8 +61,7 @@ outputs:
         - camb
       files:
         - test_camb.py
-      script: 
-      commands: test_pycamb.py
+      script: test_pycamb.py
 
   - name: camb
     script: install-camb.sh  # [not win]
