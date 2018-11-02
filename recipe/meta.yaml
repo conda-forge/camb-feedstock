@@ -18,7 +18,7 @@ source:
     - setup.py.patch  # [not win]
     - Makefile-win.patch  # [win]
     - symbolic.py-win.patch  # [win]
-    - setup.py-win.patch  # [not win]
+    - setup.py-win.patch  # [win]
 
 build:
   number: 1
