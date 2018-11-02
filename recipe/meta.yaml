@@ -34,6 +34,20 @@ requirements:
     - pip
 
 outputs:
+  - name: camb
+    script: install-camb.sh  # [not win]
+    script: install-camb.bat  # [win]
+    requirements:
+      build:
+        # these are needed to convince conda-build to pin the requirements
+        - {{ compiler('c') }}  # [not win]
+        - {{ compiler('fortran') }}  # [not win]
+      run:
+        - m2w64-gcc-libs  # [win]
+    test:
+      script: test_camb.bat  # [win]
+      script: test_camb.sh  # [not win]
+  
   - name: pycamb
     script: install-pycamb.sh  # [not win]
     script: install-pycamb.bat  # [win]
@@ -55,27 +69,10 @@ outputs:
         - sympy >=1.0
         - scipy
         - {{ compiler('fortran') }}  # [not win]
-        - m2w64-gcc-toolchain  # [win]
-    test:
-      files:
-        - test_camb.py
-      script: test_pycamb.py
-
-  - name: camb
-    script: install-camb.sh  # [not win]
-    script: install-camb.bat  # [win]
-    requirements:
-      build:
-        # these are needed to convince conda-build to pin the requirements
-        - {{ compiler('c') }}  # [not win]
-        - {{ compiler('fortran') }}  # [not win]
-      run:
         - m2w64-gcc-libs  # [win]
     test:
-      files:
-        - params.ini
-        - test_camb.bat
-      script: test_camb.bat
+      script: test_pycamb.sh  # [not win]
+      script: test_pycamb.bat  # [win]
 
 about:
   home: https://camb.info/
