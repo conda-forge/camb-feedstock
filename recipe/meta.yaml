@@ -61,8 +61,8 @@ outputs:
         - camb
       files:
         - test_camb.py
-      commands:
-        - python test_camb.py
+      script: 
+      commands: test_pycamb.py
 
   - name: camb
     script: install-camb.sh  # [not win]
@@ -77,8 +77,8 @@ outputs:
     test:
       files:
         - params.ini
-      commands:
-        - camb params.ini
+        - test_camb.bat
+      script: test_camb.bat
 
 about:
   home: https://camb.info/
