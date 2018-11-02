@@ -42,6 +42,9 @@ outputs:
         # these are needed to convince conda-build to pin the requirements
         - {{ compiler('c') }}  # [not win]
         - {{ compiler('fortran') }}  # [not win]
+      host:
+        # this is used to run the hacked test in the windows build script
+        - m2w64-gcc-libs  # [win]
       run:
         - m2w64-gcc-libs  # [win]
     test:
