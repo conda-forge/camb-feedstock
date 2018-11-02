@@ -12,10 +12,12 @@ source:
   patches:
     - modules.f90.patch
     - inidriver.F90.patch
-    - Makefile.patch
     - camb_python.f90.patch
     - setup.py.patch
-    - symbolic.py.patch
+    - Makefile.patch  # [not win]
+    - symbolic.py.patch  # [not win]
+    - Makefile-win.patch  # [win]
+    - symbolic.py-win.patch  # [win]
 
 build:
   number: 1
@@ -26,13 +28,15 @@ requirements:
     - {{ compiler('fortran') }}
     - git
     - make
+    - posix  # [win]
     - python
     - setuptools
     - pip
 
 outputs:
   - name: pycamb
-    script: install-pycamb.sh
+    script: install-pycamb.sh  # [not win]
+    script: install-pycamb.bat  # [win]
     requirements:
       build:
         # these are needed to convince conda-build to pin the requirements
@@ -42,6 +46,7 @@ outputs:
         - python
         - pip
         - setuptools
+        - posix  # [win]
       run:
         - python
         - numpy
@@ -60,12 +65,14 @@ outputs:
         - python test_camb.py
 
   - name: camb
-    script: install-camb.sh
+    script: install-camb.sh  # [not win]
+    script: install-camb.bat  # [win]
     requirements:
       build:
         # these are needed to convince conda-build to pin the requirements
         - {{ compiler('c') }}
         - {{ compiler('fortran') }}
+        - posix  # [win]
     test:
       files:
         - params.ini
