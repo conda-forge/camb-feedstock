@@ -15,7 +15,7 @@ source:
     - camb_python.f90.patch
     - Makefile.patch
     - setup.py.patch
-    - symbolic.py.patch    
+    - symbolic.py.patch
 
 build:
   number: 1
@@ -47,10 +47,9 @@ outputs:
     test:
       files:
         - params.ini
-        - test_camb.sh
-      script: test_camb.bat  # [win]
-      script: test_camb.sh  # [not win]
-  
+      commands:
+        - camb params.ini
+
   - name: pycamb
     script: install-pycamb.sh  # [not win]
     script: install-pycamb.bat  # [win]
@@ -74,11 +73,9 @@ outputs:
         - {{ compiler('fortran') }}  # [not win]
         - m2w64-gcc-libs  # [win]
     test:
-      files:
-        - test_pycamb.sh
-        - test_pycamb.py
-      script: test_pycamb.sh  # [not win]
-      script: test_pycamb.bat  # [win]
+      imports:
+        - camb
+      script: test_pycamb.py
 
 about:
   home: https://camb.info/
