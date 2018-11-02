@@ -34,34 +34,35 @@ requirements:
     - pip
 
 outputs:
-  # - name: pycamb
-  #   script: install-pycamb.sh  # [not win]
-  #   script: install-pycamb.bat  # [win]
-  #   requirements:
-  #     build:
-  #       # these are needed to convince conda-build to pin the requirements
-  #       - {{ compiler('c') }}
-  #       - {{ compiler('fortran') }}
-  #     host:
-  #       - python
-  #       - pip
-  #       - setuptools
-  #     run:
-  #       - python
-  #       - numpy
-  #       - matplotlib
-  #       - six
-  #       - mock
-  #       - sympy >=1.0
-  #       - scipy
-  #       - {{ compiler('fortran') }}
-  #   test:
-  #     imports:
-  #       - camb
-  #     files:
-  #       - test_camb.py
-  #     commands:
-  #       - python test_camb.py
+  - name: pycamb
+    script: install-pycamb.sh  # [not win]
+    script: install-pycamb.bat  # [win]
+    requirements:
+      build:
+        # these are needed to convince conda-build to pin the requirements
+        - {{ compiler('c') }}  # [not win]
+        - {{ compiler('fortran') }}  # [not win]
+      host:
+        - python
+        - pip
+        - setuptools
+      run:
+        - python
+        - numpy
+        - matplotlib
+        - six
+        - mock
+        - sympy >=1.0
+        - scipy
+        - {{ compiler('fortran') }}  # [not win]
+        - m2w64-gcc-toolchain  # [win]
+    test:
+      imports:
+        - camb
+      files:
+        - test_camb.py
+      commands:
+        - python test_camb.py
 
   - name: camb
     script: install-camb.sh  # [not win]

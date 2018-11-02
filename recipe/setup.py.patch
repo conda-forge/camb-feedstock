@@ -1,23 +1,24 @@
 diff --git a/pycamb/setup.py b/pycamb/setup.py
 --- a/pycamb/setup.py
 +++ b/pycamb/setup.py
-@@ -29,7 +29,7 @@ os.chdir(file_dir)
-
- is32Bit = struct.calcsize("P") == 4
-
--gfortran_min = '4.9'
-+gfortran_min = '4.8'
-
-
- def get_long_description():
-@@ -186,13 +186,11 @@ if __name__ == "__main__":
+@@ -100,7 +100,7 @@ class SharedLibrary(build, object):
+             # note that TDM-GCC MingW 5.1 does not work due go general fortran bug.
+             # This works: http://sourceforge.net/projects/mingw-w64/?source=typ_redirect
+             # but need to use 32bit compiler to build 32 bit dll (contrary to what is implied)
+-            FFLAGS = "-shared -static -cpp -fopenmp -O3 -ffast-math -fmax-errors=4"
++            FFLAGS = "-shared -static -cpp -fopenmp -O3 -fmax-errors=4"
+             if is32Bit: FFLAGS = "-m32 " + FFLAGS
+             SOURCES = "constants.f90 utils.f90 subroutines.f90 inifile.f90 power_tilt.f90 recfast.f90 reionization.f90" \
+                       " modules.f90 bessels.f90 equations.f90 halofit_ppf.f90 lensing.f90 SeparableBispectrum.f90 cmbmain.f90" \
+@@ -182,13 +182,11 @@ if __name__ == "__main__":
            long_description=get_long_description(),
            author='Antony Lewis',
            url="https://camb.info/",
 -          cmdclass={'build': SharedLibrary, 'build_cluster': SharedLibraryCluster,
 -                    'install': CustomInstall, 'sdist': CustomSdist},
+-          packages=['camb', 'camb_tests'],
 +          cmdclass={'build': SharedLibrary, 'build_cluster': SharedLibraryCluster},
-           packages=['camb', 'camb_tests'],
++          packages=['camb'],
            package_data={'camb': [DLLNAME, 'HighLExtrapTemplate_lenspotentialCls.dat',
                                   'PArthENoPE_880.2_marcucci.dat', 'PArthENoPE_880.2_standard.dat',
                                   'PRIMAT_Yp_DH_Error.dat']},
