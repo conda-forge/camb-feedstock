@@ -26,11 +26,11 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
-    - git
     - make
     - python
     - setuptools
     - pip
+    - vc >=14  # why?
 
 outputs:
   - name: pycamb
