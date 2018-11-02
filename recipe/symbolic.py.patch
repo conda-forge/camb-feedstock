@@ -1,5 +1,4 @@
 diff --git a/pycamb/camb/symbolic.py b/pycamb/camb/symbolic.py
-index 16b5432..0d530cf 100644
 --- a/pycamb/camb/symbolic.py
 +++ b/pycamb/camb/symbolic.py
 @@ -710,7 +710,7 @@ def get_default_compiler():

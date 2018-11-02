@@ -1,5 +1,4 @@
 diff --git a/pycamb/setup.py b/pycamb/setup.py
-index 7871812..6eb2b94 100644
 --- a/pycamb/setup.py
 +++ b/pycamb/setup.py
 @@ -29,7 +29,7 @@ os.chdir(file_dir)

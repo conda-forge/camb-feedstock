@@ -16,7 +16,7 @@ diff --git a/pycamb/camb/symbolic.py b/pycamb/camb/symbolic.py
 -    except:
 -        _default_compiler = 'gfortran'
 -        _default_flags = "-shared -fPIC -O1 -ffast-math -fmax-errors=4"
-+    _default_compiler = 'flang'
++    _default_compiler = 'gfortran'
 +    _default_flags = "-shared -fPIC -O1 -ffast-math -fmax-errors=4"
      # _default_flags="-shared -fPIC -g -fbounds-check -fbacktrace -ffpe-trap=invalid,overflow,zero",
      return _default_compiler

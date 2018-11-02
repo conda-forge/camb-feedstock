@@ -1,5 +1,4 @@
 diff --git a/Makefile b/Makefile
-index 6e8d822..af9cedc 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -60,7 +60,7 @@ COMPILER = gfortran

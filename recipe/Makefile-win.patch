@@ -55,7 +55,7 @@ diff --git a/Makefile b/Makefile
 -gfortErr = $(shell which gfortran >/dev/null; echo $$?)
 -ifeq "$(gfortErr)" "0"
 -COMPILER = gfortran
-+COMPILER = flang
++COMPILER = gfortran
  #Gfortran compiler:
  #The options here work in v4.6+. Python wrapper needs v4.9+.
 -F90C     = gfortran

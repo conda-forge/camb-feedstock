@@ -1,5 +1,4 @@
 diff --git a/camb_python.f90 b/camb_python.f90
-index 23e6b8c..898c00a 100644
 --- a/camb_python.f90
 +++ b/camb_python.f90
 @@ -115,11 +115,11 @@
