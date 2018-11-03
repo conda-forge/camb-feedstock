@@ -12,33 +12,56 @@ source:
   patches:
     - modules.f90.patch
     - inidriver.F90.patch
-    - Makefile.patch
     - camb_python.f90.patch
+    - Makefile.patch
     - setup.py.patch
     - symbolic.py.patch
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('fortran') }}
-    - git
-    - make
+    - {{ compiler('c') }}  # [not win]
+    - {{ compiler('fortran') }}  # [not win]
+    - m2w64-toolchain  # [win]
+    - git  # [not win]
+    - m2-git  # [win]
+    - make  # [not win]
+    - m2-make  # [win]
     - python
     - setuptools
     - pip
 
 outputs:
-  - name: pycamb
-    script: install-pycamb.sh
+  - name: camb
+    script: install-camb.sh  # [not win]
+    script: install-camb.bat  # [win]
     requirements:
       build:
         # these are needed to convince conda-build to pin the requirements
-        - {{ compiler('c') }}
-        - {{ compiler('fortran') }}
+        - {{ compiler('c') }}  # [not win]
+        - {{ compiler('fortran') }}  # [not win]
+      host:
+        # this is used to run the hacked test in the windows build script
+        - m2w64-gcc-libs  # [win]
+      run:
+        - m2w64-gcc-libs  # [win]
+    test:
+      files:
+        - params.ini
+      commands:
+        - camb params.ini  # [not win]
+      script: test_camb.bat  # [win]
+
+  - name: pycamb
+    script: install-pycamb.sh  # [not win]
+    script: install-pycamb.bat  # [win]
+    requirements:
+      build:
+        # these are needed to convince conda-build to pin the requirements
+        - {{ compiler('c') }}  # [not win]
+        - {{ compiler('fortran') }}  # [not win]
       host:
         - python
         - pip
@@ -51,27 +74,12 @@ outputs:
         - mock
         - sympy >=1.0
         - scipy
-        - {{ compiler('fortran') }}
+        - {{ compiler('fortran') }}  # [not win]
+        - m2w64-gcc-libs  # [win]
     test:
       imports:
         - camb
-      files:
-        - test_camb.py
-      commands:
-        - python test_camb.py
-
-  - name: camb
-    script: install-camb.sh
-    requirements:
-      build:
-        # these are needed to convince conda-build to pin the requirements
-        - {{ compiler('c') }}
-        - {{ compiler('fortran') }}
-    test:
-      files:
-        - params.ini
-      commands:
-        - camb params.ini
+      script: test_pycamb.py
 
 about:
   home: https://camb.info/
