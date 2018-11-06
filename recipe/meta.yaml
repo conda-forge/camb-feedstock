@@ -13,12 +13,13 @@ source:
     - modules.f90.patch
     - inidriver.F90.patch
     - camb_python.f90.patch
-    - Makefile.patch
+    - Makefile.patch  # [not win]
+    - Makefile-win.patch  # [win]
     - setup.py.patch
     - symbolic.py.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -43,10 +44,9 @@ outputs:
         - {{ compiler('c') }}  # [not win]
         - {{ compiler('fortran') }}  # [not win]
       host:
-        # this is used to run the hacked test in the windows build script
-        - m2w64-gcc-libs  # [win]
-      run:
-        - m2w64-gcc-libs  # [win]
+        # we don't need this, I am just trying to convince conda to make
+        # the env
+        - git  # [win]
     test:
       files:
         - params.ini
@@ -75,7 +75,6 @@ outputs:
         - sympy >=1.0
         - scipy
         - {{ compiler('fortran') }}  # [not win]
-        - m2w64-gcc-libs  # [win]
     test:
       imports:
         - camb
