@@ -43,6 +43,10 @@ outputs:
         # these are needed to convince conda-build to pin the requirements
         - {{ compiler('c') }}  # [not win]
         - {{ compiler('fortran') }}  # [not win]
+      host:
+        # we don't need this, I am just trying to convince conda to make
+        # the env
+        - git  # [win]
     test:
       files:
         - params.ini
