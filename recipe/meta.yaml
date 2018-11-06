@@ -13,7 +13,8 @@ source:
     - modules.f90.patch
     - inidriver.F90.patch
     - camb_python.f90.patch
-    - Makefile.patch
+    - Makefile.patch  # [not win]
+    - Makefile-win.patch  # [win]
     - setup.py.patch
     - symbolic.py.patch
 
@@ -42,11 +43,6 @@ outputs:
         # these are needed to convince conda-build to pin the requirements
         - {{ compiler('c') }}  # [not win]
         - {{ compiler('fortran') }}  # [not win]
-      host:
-        # this is used to run the hacked test in the windows build script
-        - m2w64-gcc-libs  # [win]
-      run:
-        - m2w64-gcc-libs  # [win]
     test:
       files:
         - params.ini
@@ -75,7 +71,6 @@ outputs:
         - sympy >=1.0
         - scipy
         - {{ compiler('fortran') }}  # [not win]
-        - m2w64-gcc-libs  # [win]
     test:
       imports:
         - camb
