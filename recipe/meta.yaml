@@ -31,7 +31,7 @@ requirements:
     - make  # [not win]
     - m2-make  # [win]
     # FIXME: for -ffast-math, remove once upstream patch to gfortran is merged
-    - gcc =4.8.5  # [osx]
+    - gcc =4.8.5  # [osx and c_compiler != "toolchain_c"]
     - python
     - setuptools
     - pip
