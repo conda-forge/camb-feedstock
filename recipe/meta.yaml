@@ -19,7 +19,7 @@ source:
     - symbolic.py.patch
 
 build:
-  number: 2
+  number: 1002
 
 requirements:
   build:
