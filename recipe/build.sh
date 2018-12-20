@@ -1,10 +1,10 @@
 #!/bin/bash
 
-EXTRA_FFLAGS=-ffast-math make camb
-
 if [[ `uname` == "Linux" ]] && [[ "${GFORTRAN}" != "gfortran" ]]; then
-    alias gfortran="${GFORTRAN}"
+    ln -s ${GFORTRAN} ${BUILD_PREFIX}/bin/gfortran
 fi
+
+EXTRA_FFLAGS=-ffast-math make camb
 
 make clean
 
