@@ -19,7 +19,7 @@ source:
     - symbolic.py.patch
 
 build:
-  number: 2
+  number: 1002
 
 requirements:
   build:
@@ -30,6 +30,8 @@ requirements:
     - m2-git  # [win]
     - make  # [not win]
     - m2-make  # [win]
+    # FIXME: for -ffast-math, remove once upstream patch to gfortran is merged
+    - gcc =4.8.5  # [osx and c_compiler != "toolchain_c"]
     - python
     - setuptools
     - pip
