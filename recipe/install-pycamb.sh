@@ -1,3 +1,3 @@
 #!/bin/bash
 
-${PYTHON} -m pip install . -vv --install-option="--skip-build"
+${PYTHON} -m pip install . -vv --no-deps --install-option="--skip-build"
