@@ -64,8 +64,8 @@ outputs:
         - params.ini
       commands:  # [not win]
         - camb params.ini  # [not win]
+        - ${PYTHON} test_pycamb.py  # [not win]
       script: test_camb.bat  # [win]
-      script: test_pycamb.py  # [not win]
 
   - name: pycamb
     requirements:
