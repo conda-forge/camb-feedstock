@@ -35,6 +35,12 @@ requirements:
     - setuptools
     - pip
 
+test:
+  imports:
+    - camb
+  files:
+    - params.ini
+
 outputs:
   - name: camb
     script: install-pycamb.sh  # [not win]
@@ -60,17 +66,20 @@ outputs:
     test:
       imports:
         - camb
-      files:
-        - params.ini
-      commands:  # [not win]
-        - camb params.ini  # [not win]
-        - ${PYTHON} test_pycamb.py  # [not win]
-      script: test_camb.bat  # [win]
+      # files:
+      #   - params.ini
+      # commands:  # [not win]
+      #   - camb params.ini  # [not win]
+      #   - ${PYTHON} test_pycamb.py  # [not win]
+      # script: test_camb.bat  # [win]
 
   - name: pycamb
     requirements:
       run:
         - {{ pin_subpackage('camb', exact=True) }}
+    test:
+      imports:
+        - camb
 
 about:
   home: https://camb.info/
