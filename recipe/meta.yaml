@@ -56,7 +56,7 @@ outputs:
         - six
         - mock
         - sympy >=1.0
-        - scipy
+        - scipy >=1.0
         - {{ compiler('fortran') }}  # [not win]
     test:
       imports:
