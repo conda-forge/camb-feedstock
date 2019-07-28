@@ -11,13 +11,6 @@ source:
   git_tag: 6884b632fa0bc2229a7bb18bf0b5d1f06c9913f2
   patches:
     - forutils_Makefile.patch
-  #   - modules.f90.patch
-  #   - inidriver.F90.patch
-  #   # - camb_python.f90.patch
-  #   - Makefile.patch  # [not win]
-  #   - Makefile-win.patch  # [win]
-  #   - setup.py.patch
-  #   - symbolic.py.patch
 
 build:
   number: 0
@@ -67,12 +60,6 @@ outputs:
     test:
       imports:
         - camb
-      # files:
-      #   - params.ini
-      # commands:  # [not win]
-      #   - camb params.ini  # [not win]
-      #   - ${PYTHON} test_pycamb.py  # [not win]
-      # script: test_camb.bat  # [win]
 
   - name: pycamb
     requirements:
