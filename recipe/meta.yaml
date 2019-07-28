@@ -34,6 +34,7 @@ test:
   files:
     - params.ini
     - test_pycamb.py
+    - run_test.sh  # [win]
 
 outputs:
   - name: camb
