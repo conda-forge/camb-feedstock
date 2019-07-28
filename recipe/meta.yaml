@@ -40,6 +40,7 @@ test:
     - camb
   files:
     - params.ini
+    - test_pycamb.py
 
 outputs:
   - name: camb
