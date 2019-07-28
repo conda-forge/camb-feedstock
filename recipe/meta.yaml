@@ -61,7 +61,7 @@ outputs:
         - camb
       files:
         - params.ini
-      commands:
+      commands:  # [not win]
         - camb params.ini  # [not win]
       script: test_camb.bat  # [win]
       script: test_pycamb.py  # [not win]
