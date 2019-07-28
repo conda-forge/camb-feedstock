@@ -1,4 +1,3 @@
 #!/bin/bash
 
-cd pycamb
-${PYTHON} setup.py install --single-version-externally-managed --record record.txt --skip-build
+${PYTHON} -m pip install . -vv --no-deps --install-option="--skip-build"

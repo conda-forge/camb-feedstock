@@ -1,5 +1,5 @@
 {% set name = "camb" %}
-{% set version = "0.1.8.1" %}
+{% set version = "1.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -8,18 +8,12 @@ package:
 source:
   git_url: https://github.com/cmbant/CAMB
   # corresponds to the tag above
-  git_tag: 021c70c2b4bac717f2b2e6f7a21471883caf345e
+  git_tag: 6884b632fa0bc2229a7bb18bf0b5d1f06c9913f2
   patches:
-    - modules.f90.patch
-    - inidriver.F90.patch
-    - camb_python.f90.patch
-    - Makefile.patch  # [not win]
-    - Makefile-win.patch  # [win]
-    - setup.py.patch
-    - symbolic.py.patch
+    - forutils_Makefile.patch
 
 build:
-  number: 1002
+  number: 0
 
 requirements:
   build:
@@ -30,33 +24,20 @@ requirements:
     - m2-git  # [win]
     - make  # [not win]
     - m2-make  # [win]
-    # FIXME: for -ffast-math, remove once upstream patch to gfortran is merged
-    - gcc =4.8.5  # [osx and c_compiler != "toolchain_c"]
     - python
     - setuptools
     - pip
 
+test:
+  imports:
+    - camb
+  files:
+    - params.ini
+    - test_pycamb.py
+    - run_test.sh  # [win]
+
 outputs:
   - name: camb
-    script: install-camb.sh  # [not win]
-    script: install-camb.bat  # [win]
-    requirements:
-      build:
-        # these are needed to convince conda-build to pin the requirements
-        - {{ compiler('c') }}  # [not win]
-        - {{ compiler('fortran') }}  # [not win]
-      host:
-        # we don't need this, I am just trying to convince conda to make
-        # the env
-        - git  # [win]
-    test:
-      files:
-        - params.ini
-      commands:
-        - camb params.ini  # [not win]
-      script: test_camb.bat  # [win]
-
-  - name: pycamb
     script: install-pycamb.sh  # [not win]
     script: install-pycamb.bat  # [win]
     requirements:
@@ -75,12 +56,19 @@ outputs:
         - six
         - mock
         - sympy >=1.0
-        - scipy
+        - scipy >=1.0
         - {{ compiler('fortran') }}  # [not win]
     test:
       imports:
         - camb
-      script: test_pycamb.py
+
+  - name: pycamb
+    requirements:
+      run:
+        - {{ pin_subpackage('camb', exact=True) }}
+    test:
+      imports:
+        - camb
 
 about:
   home: https://camb.info/
