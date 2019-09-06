@@ -64,6 +64,8 @@ outputs:
 
   - name: pycamb
     requirements:
+      host:
+        - python
       run:
         - python      
         - {{ pin_subpackage('camb', exact=True) }}
