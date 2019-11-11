@@ -25,10 +25,13 @@ requirements:
     - setuptools
     - pip
 
-# ignored but here to make the linter happy
 test:
   imports:
     - camb
+  files:
+    - params.ini
+    - test_pycamb.py
+    - run_test.sh  # [win]
 
 outputs:
   - name: camb
@@ -55,20 +58,13 @@ outputs:
     test:
       imports:
         - camb
-      files:
-        - params.ini
-        - test_pycamb.py
-        - run_test.sh  # [win]
-      script: run_test.sh  # [not win]
-      script: run_test.bat  # [win]
-        
 
   - name: pycamb
     requirements:
       host:
         - python
       run:
-        - python      
+        - python
         - {{ pin_subpackage('camb', exact=True) }}
     test:
       imports:
