@@ -1,13 +1,13 @@
 {% set name = "camb" %}
-{% set version = "1.0.6" %}
+{% set version = "1.0.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/cmbant/CAMB
-  git_tag: d4bdf8a0a4848319274e098ee344b87e53a4f3fa
+  url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
+  sha256: 14740ca4034e11c334bf1786c41fb13c0819f82d7e4df383237bb18a416d8ff6
 
 build:
   number: 0
