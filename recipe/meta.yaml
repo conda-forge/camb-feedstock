@@ -9,8 +9,8 @@ source:
   git_url: https://github.com/cmbant/CAMB
   # corresponds to the tag above
   git_tag: 6884b632fa0bc2229a7bb18bf0b5d1f06c9913f2
-  patches:
-    - forutils_Makefile.patch
+  # patches:
+  #   - forutils_Makefile.patch
 
 build:
   number: 3
