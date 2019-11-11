@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
-  sha256: 14740ca4034e11c334bf1786c41fb13c0819f82d7e4df383237bb18a416d8ff6
+  sha256: ce888ae66b168579dcd2b28302f927af6d9f7a14f84591fc943bb1462d5dfa8a
 
 build:
   number: 0
@@ -25,13 +25,10 @@ requirements:
     - setuptools
     - pip
 
+# ignored but here to make the linter happy
 test:
   imports:
     - camb
-  files:
-    - params.ini
-    - test_pycamb.py
-    - run_test.sh  # [win]
 
 outputs:
   - name: camb
@@ -58,6 +55,13 @@ outputs:
     test:
       imports:
         - camb
+      files:
+        - params.ini
+        - test_pycamb.py
+        - run_test.sh  # [win]
+      script: run_test.sh  # [not win]
+      script: run_test.bat  # [win]
+        
 
   - name: pycamb
     requirements:
