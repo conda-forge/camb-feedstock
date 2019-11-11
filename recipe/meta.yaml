@@ -1,19 +1,16 @@
 {% set name = "camb" %}
-{% set version = "1.0.6" %}
+{% set version = "1.0.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/cmbant/CAMB
-  # corresponds to the tag above
-  git_tag: 6884b632fa0bc2229a7bb18bf0b5d1f06c9913f2
-  patches:
-    - forutils_Makefile.patch
+  url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
+  sha256: ce888ae66b168579dcd2b28302f927af6d9f7a14f84591fc943bb1462d5dfa8a
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
@@ -67,7 +64,7 @@ outputs:
       host:
         - python
       run:
-        - python      
+        - python
         - {{ pin_subpackage('camb', exact=True) }}
     test:
       imports:
