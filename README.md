@@ -155,27 +155,21 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-camb-green.svg)](https://anaconda.org/conda-forge/camb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/camb.svg)](https://anaconda.org/conda-forge/camb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/camb.svg)](https://anaconda.org/conda-forge/camb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/camb.svg)](https://anaconda.org/conda-forge/camb) |
-
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pycamb-green.svg)](https://anaconda.org/conda-forge/pycamb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pycamb.svg)](https://anaconda.org/conda-forge/pycamb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pycamb.svg)](https://anaconda.org/conda-forge/pycamb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pycamb.svg)](https://anaconda.org/conda-forge/pycamb) |
 
 Installing camb
 ===============
 
-Installing `camb` from the `conda-forge` channel can be doing
-
-```
-conda install -c conda-forge camb
-```
-
-You can also add `conda-forge` to your channels with:
+Installing `camb` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `camb` can also be installed with:
+Once the `conda-forge` channel has been enabled, `camb, pycamb` can be installed with:
 
 ```
-conda install camb
+conda install camb pycamb
 ```
 
 It is possible to list all of the versions of `camb` available on your platform with:
@@ -184,7 +178,6 @@ It is possible to list all of the versions of `camb` available on your platform 
 conda search camb --channel conda-forge
 ```
 
-Check it has correctly installed version 1.0+ not an old version. If not, try installing in a clean environment.
 
 About conda-forge
 =================
@@ -200,7 +193,7 @@ A feedstock is made up of a conda recipe (the instructions on what and how to bu
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
+and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
 packages to the [conda-forge](https://anaconda.org/conda-forge)
 [Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
 
