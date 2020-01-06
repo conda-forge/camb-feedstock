@@ -6,4 +6,4 @@ fi
 
 rm -rf forutils
 
-python setup.py build
+python setup.py build_cluster
