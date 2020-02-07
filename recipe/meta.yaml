@@ -77,6 +77,7 @@ outputs:
       commands:
         - "${PYTHON} -m pip check"  # [not win]
         - "%PYTHON% -m pip check"  # [win]
+        - '{{ PYTHON }} -m pip check'
       requires:
         - pip
 
