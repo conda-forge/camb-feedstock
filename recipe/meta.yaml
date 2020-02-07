@@ -74,6 +74,11 @@ outputs:
     test:
       imports:
         - camb
+    commands:
+      - "${PYTHON} -m pip check"  # [not win]
+      - "%PYTHON% -m pip check"  # [win]
+    requires:
+      - pip
 
 about:
   home: https://camb.info/
