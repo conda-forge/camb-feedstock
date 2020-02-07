@@ -35,8 +35,8 @@ test:
     - test_pycamb.py
     - run_test.sh  # [win]
   commands:
-    - ${PYTHON} -m pip check  # [not win]
-    - %PYTHON% -m pip check  # [win]
+    - "${PYTHON} -m pip check"  # [not win]
+    - "%PYTHON% -m pip check"  # [win]
 
 outputs:
   - name: camb
