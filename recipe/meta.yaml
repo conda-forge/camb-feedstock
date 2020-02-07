@@ -30,7 +30,6 @@ test:
     - camb
   requires:
     - pip
-    - python
   files:
     - params.ini
     - test_pycamb.py
@@ -78,10 +77,8 @@ outputs:
       commands:
         - "${PYTHON} -m pip check"  # [not win]
         - "%PYTHON% -m pip check"  # [win]
-        - '{{ PYTHON }} -m pip check'
       requires:
         - pip
-        - python
 
 about:
   home: https://camb.info/
