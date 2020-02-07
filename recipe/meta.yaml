@@ -75,8 +75,7 @@ outputs:
       imports:
         - camb
       commands:
-        - "${PYTHON} -m pip check"  # [not win]
-        - "%PYTHON% -m pip check"  # [win]
+        - python -m pip check
       requires:
         - pip
 
