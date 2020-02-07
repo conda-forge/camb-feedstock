@@ -28,10 +28,13 @@ requirements:
 test:
   imports:
     - camb
+  requires:
+    - pip
   files:
     - params.ini
     - test_pycamb.py
     - run_test.sh  # [win]
+    - {{ PYTHON }} -m pip check
 
 outputs:
   - name: camb
