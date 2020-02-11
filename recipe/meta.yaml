@@ -10,7 +10,8 @@ source:
   sha256: 3ab4eec98a3f5e97c8acef66a79778db380b66afd577712e07a342fdd6073113
 
 build:
-  number: 1
+  number: 2
+  skip: True  # [py2k]
 
 requirements:
   build:
@@ -55,17 +56,6 @@ outputs:
         - sympy >=1.0
         - scipy >=1.0
         - {{ compiler('fortran') }}  # [not win]
-    test:
-      imports:
-        - camb
-
-  - name: pycamb
-    requirements:
-      host:
-        - python
-      run:
-        - python
-        - {{ pin_subpackage('camb', exact=True) }}
     test:
       imports:
         - camb
