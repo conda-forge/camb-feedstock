@@ -10,7 +10,8 @@ source:
   sha256: 3ab4eec98a3f5e97c8acef66a79778db380b66afd577712e07a342fdd6073113
 
 build:
-  number: 1
+  number: 2
+  skip: True  # [py2k]
 
 requirements:
   build:
@@ -24,6 +25,19 @@ requirements:
     - python
     - setuptools
     - pip
+  host:
+    - python
+    - pip
+    - setuptools
+  run:
+    - python
+    - numpy
+    - matplotlib
+    - six
+    - mock
+    - sympy >=1.0
+    - scipy >=1.0
+    - {{ compiler('fortran') }}  # [not win]
 
 test:
   imports:
@@ -32,43 +46,6 @@ test:
     - params.ini
     - test_pycamb.py
     - run_test.sh  # [win]
-
-outputs:
-  - name: camb
-    script: install-pycamb.sh  # [not win]
-    script: install-pycamb.bat  # [win]
-    requirements:
-      build:
-        # these are needed to convince conda-build to pin the requirements
-        - {{ compiler('c') }}  # [not win]
-        - {{ compiler('fortran') }}  # [not win]
-      host:
-        - python
-        - pip
-        - setuptools
-      run:
-        - python
-        - numpy
-        - matplotlib
-        - six
-        - mock
-        - sympy >=1.0
-        - scipy >=1.0
-        - {{ compiler('fortran') }}  # [not win]
-    test:
-      imports:
-        - camb
-
-  - name: pycamb
-    requirements:
-      host:
-        - python
-      run:
-        - python
-        - {{ pin_subpackage('camb', exact=True) }}
-    test:
-      imports:
-        - camb
 
 about:
   home: https://camb.info/

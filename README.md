@@ -52,13 +52,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=master&jobName=linux&configuration=linux_python2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_python3.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=master">
@@ -80,13 +73,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=master&jobName=osx&configuration=osx_python2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_python3.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=master">
@@ -105,13 +91,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=master&jobName=osx&configuration=osx_python3.8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=master&jobName=win&configuration=win_python2.7" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -155,7 +134,6 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-camb-green.svg)](https://anaconda.org/conda-forge/camb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/camb.svg)](https://anaconda.org/conda-forge/camb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/camb.svg)](https://anaconda.org/conda-forge/camb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/camb.svg)](https://anaconda.org/conda-forge/camb) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pycamb-green.svg)](https://anaconda.org/conda-forge/pycamb) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pycamb.svg)](https://anaconda.org/conda-forge/pycamb) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pycamb.svg)](https://anaconda.org/conda-forge/pycamb) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pycamb.svg)](https://anaconda.org/conda-forge/pycamb) |
 
 Installing camb
 ===============
@@ -166,10 +144,10 @@ Installing `camb` from the `conda-forge` channel can be achieved by adding `cond
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `camb, pycamb` can be installed with:
+Once the `conda-forge` channel has been enabled, `camb` can be installed with:
 
 ```
-conda install camb pycamb
+conda install camb
 ```
 
 It is possible to list all of the versions of `camb` available on your platform with:
