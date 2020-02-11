@@ -11,7 +11,9 @@ source:
 
 build:
   number: 2
-  skip: True  # [py<35]
+  skip: True  # [py2k]
+  script: install-pycamb.sh  # [not win]
+  script: install-pycamb.bat  # [win]
 
 requirements:
   build:
@@ -25,6 +27,19 @@ requirements:
     - python
     - setuptools
     - pip
+  host:
+    - python
+    - pip
+    - setuptools
+  run:
+    - python
+    - numpy
+    - matplotlib
+    - six
+    - mock
+    - sympy >=1.0
+    - scipy >=1.0
+    - {{ compiler('fortran') }}  # [not win]
 
 test:
   imports:
@@ -33,32 +48,6 @@ test:
     - params.ini
     - test_pycamb.py
     - run_test.sh  # [win]
-
-outputs:
-  - name: camb
-    script: install-pycamb.sh  # [not win]
-    script: install-pycamb.bat  # [win]
-    requirements:
-      build:
-        # these are needed to convince conda-build to pin the requirements
-        - {{ compiler('c') }}  # [not win]
-        - {{ compiler('fortran') }}  # [not win]
-      host:
-        - python
-        - pip
-        - setuptools
-      run:
-        - python
-        - numpy
-        - matplotlib
-        - six
-        - mock
-        - sympy >=1.0
-        - scipy >=1.0
-        - {{ compiler('fortran') }}  # [not win]
-    test:
-      imports:
-        - camb
 
 about:
   home: https://camb.info/
