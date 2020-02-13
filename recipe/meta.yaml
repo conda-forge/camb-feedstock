@@ -34,6 +34,7 @@ requirements:
     - numpy
     - six  # TODO: remove for next update
     - mock
+    - setuptools  # for an import of pkg_resources
     - sympy >=1.0
     - scipy >=1.0
     - {{ compiler('fortran') }}  # [not win]
