@@ -10,7 +10,7 @@ source:
   sha256: 3ab4eec98a3f5e97c8acef66a79778db380b66afd577712e07a342fdd6073113
 
 build:
-  number: 2
+  number: 3
   skip: True  # [py2k]
 
 requirements:
@@ -32,9 +32,9 @@ requirements:
   run:
     - python
     - numpy
-    - matplotlib
-    - six
+    - six  # TODO: remove for next update
     - mock
+    - setuptools  # for an import of pkg_resources
     - sympy >=1.0
     - scipy >=1.0
     - {{ compiler('fortran') }}  # [not win]
