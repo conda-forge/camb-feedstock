@@ -32,6 +32,8 @@ requirements:
   run:
     - python
     - numpy
+    - six  # TODO: remove for next update
+    - mock
     - sympy >=1.0
     - scipy >=1.0
     - {{ compiler('fortran') }}  # [not win]
