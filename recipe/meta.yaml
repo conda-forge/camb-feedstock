@@ -1,5 +1,5 @@
 {% set name = "camb" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
-  sha256: 1e0dad292b70f2c02a3923e589bc48a0c7107a9dce982ab5a487116903ffcbee
+  sha256: b1e3f76eb82261072647646196745db7ed490f83abe460c2968ef0b86bfe1bbf
 
 build:
   number: 0
-  skip: True  # [py2k]
+  skip: true  # [py2k]
 
 requirements:
   build:
