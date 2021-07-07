@@ -6,7 +6,8 @@ fi
 
 rm -rf forutils
 
-gfortran -dumpversion
+git clone --branch 1.0.3 --depth=1 https://github.com/cmbant/forutils
+cp ${RECIPE_DIR}/Makefile_compiler forutils/.
 
 ${PYTHON} setup.py build_cluster
 
