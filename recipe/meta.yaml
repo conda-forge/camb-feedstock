@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
   sha256: 38e49aa1e5b856ff2efd909490fde60682287811703fabf418afbc81347cd0c2
+  patches:
+    - makefile_flags_0001.patch  # [unix]
 
 build:
   number: 0
@@ -22,9 +24,8 @@ requirements:
     - m2-git  # [win]
     - make  # [not win]
     - m2-make  # [win]
-    - python
-    - setuptools
-    - pip
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - pip
