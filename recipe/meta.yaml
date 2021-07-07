@@ -10,6 +10,7 @@ source:
   sha256: 38e49aa1e5b856ff2efd909490fde60682287811703fabf418afbc81347cd0c2
   patches:
     - remove_compiler_check_0000.patch  # [osx and build_platform != target_platform]
+    - makefile_flags_0001.patch  # [unix]
 
 build:
   number: 0
