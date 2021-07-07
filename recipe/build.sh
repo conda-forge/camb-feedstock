@@ -13,8 +13,8 @@ if [[ ${target_platform} == "osx-arm64" ]]; then
     ln -s ${F90} ${BUILD_PREFIX}/bin/gfortran
     
     # we download by hand so we can patch the makefile of the submodule
-    ${PYTHON} -c "import setup, os; os.chdir('fortran'); setup.get_forutils()"
-    cp ${RECIPE_DIR}/Makefile_compiler forutils/.
+    # ${PYTHON} -c "import setup, os; os.chdir('fortran'); setup.get_forutils()"
+    # cp ${RECIPE_DIR}/Makefile_compiler forutils/.
 fi
 
 ${PYTHON} setup.py build_cluster
