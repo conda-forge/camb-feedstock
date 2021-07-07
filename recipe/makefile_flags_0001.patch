@@ -1,5 +1,5 @@
---- a/Makefile
-+++ b/Makefile
+--- a/fortran/Makefile
++++ b/fortran/Makefile
 @@ -93,7 +93,7 @@
  F90C     = gfortran
  COMMON_FFLAGS = -MMD -cpp -ffree-line-length-none -fmax-errors=4 -fopenmp
