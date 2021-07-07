@@ -6,6 +6,8 @@ fi
 
 rm -rf forutils
 
+gfortran -dumpversion
+
 ${PYTHON} setup.py build_cluster
 
 ${PYTHON} -m pip install . -vv --no-deps --install-option="--skip-build"
