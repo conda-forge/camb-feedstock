@@ -6,8 +6,10 @@ fi
 
 rm -rf forutils
 
-git clone --branch 1.0.3 --depth=1 https://github.com/cmbant/forutils
-cp ${RECIPE_DIR}/Makefile_compiler forutils/.
+if [[ ${target_platform} == "osx-arm64" ]]; then
+    ${PYTHON} -c "import setup; setup.get_forutils()"
+    cp ${RECIPE_DIR}/Makefile_compiler forutils/.
+fi
 
 ${PYTHON} setup.py build_cluster
 
