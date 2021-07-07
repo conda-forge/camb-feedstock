@@ -7,7 +7,7 @@ fi
 rm -rf forutils
 
 if [[ ${target_platform} == "osx-arm64" ]]; then
-    ${PYTHON} -c "import setup; setup.get_forutils()"
+    ${PYTHON} -c "import setup, os; os.chdir('fortran'); setup.get_forutils()"
     cp ${RECIPE_DIR}/Makefile_compiler forutils/.
 fi
 
