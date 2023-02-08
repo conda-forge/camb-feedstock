@@ -1,5 +1,5 @@
 {% set name = "camb" %}
-{% set version = "1.3.6" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
-  sha256: a08a742722c58247697f287014d00117b5bde52b6ae5e0dab39f707f04426383
+  sha256: 63ac92c2a83565a39e417c99b2530c93959bc742528043bd89bb471f7849e3f2
   patches:
     - makefile_flags_0001.patch  # [unix]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py2k]
 
 requirements:
