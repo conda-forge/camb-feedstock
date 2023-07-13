@@ -1,11 +1,11 @@
-About camb
-==========
+About camb-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/camb-feedstock/blob/main/LICENSE.txt)
 
 Home: https://camb.info/
 
 Package license: modified LGPL
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/camb-feedstock/blob/main/LICENSE.txt)
 
 Summary: Code for Anisotropies in the Microwave Background
 
