@@ -15,4 +15,4 @@ fi
 
 ${PYTHON} setup.py build_cluster
 
-${PYTHON} -m pip install . -vv --no-deps --install-option="--skip-build"
+${PYTHON} -m pip install . -vv --no-deps --config-setting="--build-option=--skip-build"
