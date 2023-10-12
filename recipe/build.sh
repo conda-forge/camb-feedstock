@@ -6,7 +6,7 @@ fi
 
 rm -rf forutils
 
-if [[ ${target_platform} == "osx-arm64" ]]; then
+if [[ ${target_platform} == "osx-arm64" ]] || [[ ${target_platform} == "osx-64" ]]; then
     # help it find the right compiler
     export F90C=${F90}
     rm -f ${BUILD_PREFIX}/bin/gfortran
