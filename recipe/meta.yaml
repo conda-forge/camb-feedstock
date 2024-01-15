@@ -1,5 +1,5 @@
 {% set name = "camb" %}
-{% set version = "1.5.3" %}
+{% set version = "1.5.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
-  sha256: 3c252fa7485312b2fecc222d7d3ea84a23ab56830aeeaf897cfbf1d3cd94f48f
+  sha256: 0c286fc55dfbda495f26a27be6222ca51527d245ad10986c0f3d59ff43f340b7
   patches:
     - makefile_flags_0001.patch  # [unix]
 
