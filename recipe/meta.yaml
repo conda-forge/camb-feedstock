@@ -1,5 +1,5 @@
 {% set name = "camb" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz
-  sha256: 0c286fc55dfbda495f26a27be6222ca51527d245ad10986c0f3d59ff43f340b7
+  sha256: 0ddc55159d9c32c1c7015f6c6af71a097eccd6e13a363acd4ba47f1de2f2077d
   patches:
     - makefile_flags_0001.patch  # [unix]
 
@@ -18,6 +18,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}  # [not win]
+    - {{ stdlib("c") }}    # [not win]
     - {{ compiler('fortran') }}  # [not win]
     - m2w64-toolchain  # [win]
     - git  # [not win]
