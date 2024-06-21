@@ -55,8 +55,7 @@ test:
 
 about:
   home: https://camb.info/
-  license: modified LGPL
-  license_family: LGPL
+  license: LicenseRef-modified-LGPL
   license_file: {{ RECIPE_DIR }}/LICENSE
   summary: Code for Anisotropies in the Microwave Background
   description: |
