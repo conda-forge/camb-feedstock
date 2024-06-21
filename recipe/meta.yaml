@@ -17,10 +17,9 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
-    - {{ stdlib("c") }}    # [not win]
-    - {{ compiler('fortran') }}  # [not win]
-    - m2w64-toolchain  # [win]
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
+    - {{ compiler('fortran') }}
     - git  # [not win]
     - m2-git  # [win]
     - make  # [not win]
@@ -39,7 +38,7 @@ requirements:
     - setuptools
     - sympy >=1.0
     - scipy >=1.0
-    - {{ compiler('fortran') }}  # [not win]
+    - {{ compiler('fortran') }}
 
 test:
   imports:
