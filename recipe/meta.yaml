@@ -14,8 +14,8 @@ source:
 build:
   number: 0
   skip: true  # [py2k]
-  script:                                                                                                   # [win]
-    - {{ PYTHON }} -m pip install camb=={{ version }} -v --no-deps --no-build-isolation --ignore-installed  # [win]
+  script:                                                                                                     # [win]
+    - {{ PYTHON }} -m pip install camb=={{ version }} -vvv --no-deps --no-build-isolation --ignore-installed  # [win]
 
 requirements:
   build:
