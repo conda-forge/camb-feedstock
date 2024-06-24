@@ -10,12 +10,12 @@ source:
     sha256: 0ddc55159d9c32c1c7015f6c6af71a097eccd6e13a363acd4ba47f1de2f2077d  # [unix]
     patches:                                                                  # [unix]
       - makefile_flags_0001.patch                                             # [unix]
-  - url: https://camb.info/camb_wheel.php?package=camb&version={{ version }}&template=py3-none-win_amd64  # [win]
-    sha256: 528c78d1387af4ac19ab7ba85ec42c6d343db0c5886fec0775b1ce56103f8470  # [win]
+  - fn: camb-{{ version }}-py3-none-win_amd64.whl                                                         # [win]
+    url: https://camb.info/camb_wheel.php?package=camb&version={{ version }}&template=py3-none-win_amd64  # [win]
+    sha256: 528c78d1387af4ac19ab7ba85ec42c6d343db0c5886fec0775b1ce56103f8470                              # [win]
 
 build:
   number: 0
-  skip: true  # [py2k]
   script:                                                                                                                           # [win]
     - {{ PYTHON }} -m pip install camb-{{ version }}-py3-none-win_amd64.whl -vvv --no-deps --no-build-isolation --ignore-installed  # [win]
 
