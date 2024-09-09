@@ -15,7 +15,7 @@ source:
     sha256: 9fdb70727e3b5453ae477c8bdcc6f5c9b0aa93b0556a5657d6988932e953f4d4  # [win]
 
 build:
-  number: 0
+  number: 1
   script:   # [win]
     - {{ PYTHON }} -m pip install camb-{{ version }}-py3-none-win_amd64.whl -vvv --no-deps --no-build-isolation --ignore-installed  # [win]
 
