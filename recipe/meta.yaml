@@ -15,7 +15,7 @@ source:
     sha256: fe2ce0a961f941b3ecc0538482da2a4f3becda30a7fa408b850e72567b2c0524  # [win]
 
 build:
-  number: 0
+  number: 1
   script:   # [win]
     - {{ PYTHON }} -m pip install camb-{{ version }}-py3-none-win_amd64.whl -vvv --no-deps --no-build-isolation --ignore-installed  # [win]
 
@@ -23,7 +23,7 @@ requirements:
   build:
     - {{ compiler('c') }}         # [not win]
     - {{ stdlib("c") }}           # [not win]
-    - {{ compiler('fortran') }}   # [not win]
+    - {{ compiler("fortran") }}
     - git                         # [not win]
     - make                        # [not win]
     - python                                 # [build_platform != target_platform]
@@ -40,7 +40,7 @@ requirements:
     - setuptools
     - sympy >=1.0
     - scipy >=1.0
-    - {{ compiler('fortran') }}   # [not win]
+    - {{ compiler("fortran") }}
 
 test:
   imports:
