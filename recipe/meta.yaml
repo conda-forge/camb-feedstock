@@ -1,5 +1,5 @@
 {% set name = "camb" %}
-{% set version = "1.6.4" %}
+{% set version = "1.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,15 @@ package:
 
 source:
   - url: https://github.com/cmbant/CAMB/archive/{{ version }}.tar.gz  # [unix]
-    sha256: a7db789ec22cb5957cb71a9edcac8417e8baebd7c7f81942ef941fb41ecb2a1d  # [unix]
+    sha256: 1965db83f15fcfb0617fafb396c84f8309a51850792052e57040d8f2f9b63779  # [unix]
     patches:   # [unix]
       - makefile_flags_0001.patch                                             # [unix]
   - fn: camb-{{ version }}-py3-none-win_amd64.whl  # [win]
     url: https://camb.info/camb_wheel.php?package=camb&version={{ version }}&template=py3-none-win_amd64  # [win]
-    sha256: d69c67d9ec15bfa71f9b7ec9b263b8b79065f7df81bada6280cffa3423b4b46d  # [win]
+    sha256: dc98ded515040ca2b26309ac2092c8fadddd024f2f38c99db30fc991e330bca0  # [win]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<310]
   script:   # [win]
     - {{ PYTHON }} -m pip install camb-{{ version }}-py3-none-win_amd64.whl -vvv --no-deps --no-build-isolation --ignore-installed  # [win]
