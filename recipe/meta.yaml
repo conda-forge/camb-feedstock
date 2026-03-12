@@ -22,9 +22,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
-    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}         # [not win]
+    - {{ stdlib("c") }}           # [not win]
+    - {{ compiler('fortran') }}   # [not win]
+    - m2-git                      # [win]
     - git                         # [not win]
     - make                        # [not win]
     - python                                 # [build_platform != target_platform]
