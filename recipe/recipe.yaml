@@ -9,14 +9,21 @@ package:
   version: ${{ version }}
 
 source:
-  - url: ${{ 'https://github.com/cmbant/CAMB/archive/${{ version }}.tar.gz' if unix else '' }}
-    sha256: ${{ '1965db83f15fcfb0617fafb396c84f8309a51850792052e57040d8f2f9b63779' if unix else '' }}
-    patches:
-      - if: unix
-        then: makefile_flags_0001.patch
-  - url: ${{ 'https://camb.info/camb_wheel.php?package=camb&version=${{ version }}&template=py3-none-win_amd64' if win else '' }}
-    sha256: ${{ 'dc98ded515040ca2b26309ac2092c8fadddd024f2f38c99db30fc991e330bca0' if win else '' }}
-    file_name: ${{ 'camb-${{ version }}-py3-none-win_amd64.whl' if win else '' }}
+  url:
+    if: unix
+    then: 'https://github.com/cmbant/CAMB/archive/${{ version }}.tar.gz'
+    else: 'https://camb.info/camb_wheel.php?package=camb&version=${{ version }}&template=py3-none-win_amd64'
+  sha256:
+    if: unix
+    then: '1965db83f15fcfb0617fafb396c84f8309a51850792052e57040d8f2f9b63779'
+    else: 'dc98ded515040ca2b26309ac2092c8fadddd024f2f38c99db30fc991e330bca0'
+  patches:
+    - if: unix
+      then: makefile_flags_0001.patch
+  file_name:
+    if: win
+    then: 'camb-${{ version }}-py3-none-win_amd64.whl'
+    else: null
 
 build:
   number: 0
