@@ -18,7 +18,7 @@ source:
       then: makefile_flags_0001.patch
 
 build:
-  number: 0
+  number: 1
   skip: match(python, "<3.10")
   script:
     - if: win
