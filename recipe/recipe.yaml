@@ -75,7 +75,7 @@ tests:
 
 about:
   license: LicenseRef-modified-LGPL
-  license_file: ${{ RECIPE_DIR }}/LICENSE
+  license_file: LICENSE
   summary: Code for Anisotropies in the Microwave Background
   description: |
     Code for Anisotropies in the Microwave Background
