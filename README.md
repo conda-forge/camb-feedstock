@@ -17,32 +17,38 @@ Code for Anisotropies in the Microwave Background
 by Antony Lewis and Anthony Challinor
 
 Features:
-  - Support for closed, open and flat models
-  - Scalar, vector and tensor modes including polarization
-  - Output Cl, matter transfer functions, matter power spectrum and σ8
-  - Fast computation to ~0.3-0.1% accuracy, with controllable accuracy level
-  - Relatively structured and easily extendable Fortran 90 code
-  - Efficient support for massive neutrinos
-  - Absolute computations from correctly normalized initial power spectra
-  - Computation of lensed CMB power spectra and lensing potential power spectrum
-  - Internally parallelized for fast execution on multi-processor machines
-  - Use CAMB with CosmoMC for Monte-Carlo parameter estimation
-  - Constant equation of state quintessence (or variable PPF)
-  - Support for general correlated adiabatic/isocurvature initial conditions
-  - Accurate full-sky calculation of lensed power spectra (astro-ph/0502425)
-  - Integrated interface to HALOFIT for non-linear fitting
-  - support for arbitrary neutrino mass splittings
-  - For 21cm, lensing and number count power spectra see this extension
-  - For perturbed recombination and effect on small-scale baryons see this extension
-  - Calculation of local primordial and CMB lensing bispectra
-  - Easy-to-use Python wrapper
-
+- Support for closed, open and flat models
+- Scalar, vector and tensor modes including polarization
+- Output Cl, matter transfer functions, matter power spectrum and σ8
+- Fast computation to ~0.3-0.1% accuracy, with controllable accuracy level
+- Relatively structured and easily extendable Fortran 90 code
+- Efficient support for massive neutrinos
+- Absolute computations from correctly normalized initial power spectra
+- Computation of lensed CMB power spectra and lensing potential power spectrum
+- Internally parallelized for fast execution on multi-processor machines
+- Use CAMB with CosmoMC for Monte-Carlo parameter estimation
+- Constant equation of state quintessence (or variable PPF)
+- Support for general correlated adiabatic/isocurvature initial conditions
+- Accurate full-sky calculation of lensed power spectra (astro-ph/0502425)
+- Integrated interface to HALOFIT for non-linear fitting
+- support for arbitrary neutrino mass splittings
+- For 21cm, lensing and number count power spectra see this extension
+- For perturbed recombination and effect on small-scale baryons see this extension
+- Calculation of local primordial and CMB lensing bispectra
+- Easy-to-use Python wrapper
 
 Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/camb-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/camb-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -56,41 +62,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.12.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.14.____cp314" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
@@ -123,41 +94,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14.____cp314" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.12.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3783&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/camb-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.14.____cp314" alt="variant">
                 </a>
               </td>
             </tr><tr>
