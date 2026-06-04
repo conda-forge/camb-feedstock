@@ -17,26 +17,25 @@ Code for Anisotropies in the Microwave Background
 by Antony Lewis and Anthony Challinor
 
 Features:
-  - Support for closed, open and flat models
-  - Scalar, vector and tensor modes including polarization
-  - Output Cl, matter transfer functions, matter power spectrum and σ8
-  - Fast computation to ~0.3-0.1% accuracy, with controllable accuracy level
-  - Relatively structured and easily extendable Fortran 90 code
-  - Efficient support for massive neutrinos
-  - Absolute computations from correctly normalized initial power spectra
-  - Computation of lensed CMB power spectra and lensing potential power spectrum
-  - Internally parallelized for fast execution on multi-processor machines
-  - Use CAMB with CosmoMC for Monte-Carlo parameter estimation
-  - Constant equation of state quintessence (or variable PPF)
-  - Support for general correlated adiabatic/isocurvature initial conditions
-  - Accurate full-sky calculation of lensed power spectra (astro-ph/0502425)
-  - Integrated interface to HALOFIT for non-linear fitting
-  - support for arbitrary neutrino mass splittings
-  - For 21cm, lensing and number count power spectra see this extension
-  - For perturbed recombination and effect on small-scale baryons see this extension
-  - Calculation of local primordial and CMB lensing bispectra
-  - Easy-to-use Python wrapper
-
+- Support for closed, open and flat models
+- Scalar, vector and tensor modes including polarization
+- Output Cl, matter transfer functions, matter power spectrum and σ8
+- Fast computation to ~0.3-0.1% accuracy, with controllable accuracy level
+- Relatively structured and easily extendable Fortran 90 code
+- Efficient support for massive neutrinos
+- Absolute computations from correctly normalized initial power spectra
+- Computation of lensed CMB power spectra and lensing potential power spectrum
+- Internally parallelized for fast execution on multi-processor machines
+- Use CAMB with CosmoMC for Monte-Carlo parameter estimation
+- Constant equation of state quintessence (or variable PPF)
+- Support for general correlated adiabatic/isocurvature initial conditions
+- Accurate full-sky calculation of lensed power spectra (astro-ph/0502425)
+- Integrated interface to HALOFIT for non-linear fitting
+- support for arbitrary neutrino mass splittings
+- For 21cm, lensing and number count power spectra see this extension
+- For perturbed recombination and effect on small-scale baryons see this extension
+- Calculation of local primordial and CMB lensing bispectra
+- Easy-to-use Python wrapper
 
 Current build status
 ====================
