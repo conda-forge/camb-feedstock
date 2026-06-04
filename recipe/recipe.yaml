@@ -3,13 +3,15 @@ schema_version: 1
 context:
   name: camb
   version: "1.6.5"
+  unix_url: 'https://github.com/cmbant/CAMB/archive/${{ version }}.tar.gz'
+  win_url: 'https://camb.info/camb_wheel.php?package=camb&version=${{ version }}&template=py3-none-win_amd64'
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: ${{ 'https://github.com/cmbant/CAMB/archive/${{ version }}.tar.gz' if unix else 'https://camb.info/camb_wheel.php?package=camb&version=${{ version }}&template=py3-none-win_amd64' }}
+  url: ${{ unix_url if unix else win_url }}
   sha256: ${{ '1965db83f15fcfb0617fafb396c84f8309a51850792052e57040d8f2f9b63779' if unix else 'dc98ded515040ca2b26309ac2092c8fadddd024f2f38c99db30fc991e330bca0' }}
   patches:
     - if: unix
