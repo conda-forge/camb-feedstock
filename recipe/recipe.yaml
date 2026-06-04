@@ -62,12 +62,16 @@ tests:
       imports:
         - camb
       pip_check: false
-  - files:
+  - script:
+      - if: win
+        then: run_test.bat
+        else: run_test.sh
+    files:
       recipe:
         - params.ini
         - test_pycamb.py
-        - if: win
-          then: run_test.sh
+        - run_test.sh
+        - run_test.bat
 
 about:
   license: LicenseRef-modified-LGPL
