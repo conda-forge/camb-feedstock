@@ -91,7 +91,7 @@ about:
     The python module is "camb". Full documentation: https://camb.readthedocs.io/en/latest/
   homepage: https://camb.info/
   repository: https://github.com/cmbant/CAMB
-  documentation: https://camb.info/readme.html
+  documentation: https://camb.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
