@@ -52,6 +52,11 @@ requirements:
     - pip
     - setuptools
     - packaging
+    - if: unix
+      then:
+        - if: linux
+          then: libgomp
+          else: llvm-openmp
   run:
     - python
     - numpy
