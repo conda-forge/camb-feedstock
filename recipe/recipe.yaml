@@ -21,7 +21,7 @@ source:
       sha256: 548167e87319163c334de661a8a86d3d2a482b9ae105090f79c23d3d74425573
 
 build:
-  number: 0
+  number: 1
   skip: match(python, "<3.11")
   script:
     - if: win
