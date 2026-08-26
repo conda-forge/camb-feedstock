@@ -2,20 +2,23 @@ schema_version: 1
 
 context:
   name: camb
-  version: "2.0.0"
-  unix_url: 'https://github.com/cmbant/CAMB/archive/${{ version }}.tar.gz'
-  win_url: 'https://camb.info/camb_wheel.php?package=camb&version=${{ version }}&template=py3-none-win_amd64'
+  version: "2.0.4"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: ${{ unix_url if unix else win_url }}
-  sha256: ${{ 'ab72e80729cdba2907b243ba6680c3d67f2d21aeb279ccefe81089f75501904f' if unix else '548167e87319163c334de661a8a86d3d2a482b9ae105090f79c23d3d74425573' }}
-  patches:
-    - if: unix
-      then: makefile_flags_0001.patch
+  - if: unix
+    then:
+      url: https://pypi.org/packages/source/c/camb/camb-${{ version }}.tar.gz
+      sha256: 2f1f5f3b3964a3746693dc88a54218dca4ea049a04726f8177664c11d2d2616e
+      patches:
+        - makefile_flags_0001.patch
+  - if: win
+    then:
+      url: https://camb.info/camb_wheel.php?package=camb&version=${{ version }}&template=py3-none-win_amd64
+      sha256: 279810713d6fd91056237d57e7980bee4d8d5a126051384e8c086dd70ee99417
 
 build:
   number: 0
@@ -49,6 +52,11 @@ requirements:
     - pip
     - setuptools
     - packaging
+    - if: unix
+      then:
+        - if: linux
+          then: libgomp
+          else: llvm-openmp
   run:
     - python
     - numpy
