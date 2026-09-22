@@ -21,7 +21,7 @@ source:
       sha256: 279810713d6fd91056237d57e7980bee4d8d5a126051384e8c086dd70ee99417
 
 build:
-  number: 0
+  number: 1
   skip: match(python, "<3.11")
   script:
     - if: win
@@ -34,19 +34,16 @@ build:
 requirements:
   build:
     - if: not win
-      then: ${{ compiler('c') }}
-    - if: not win
-      then: ${{ stdlib("c") }}
-    - if: not win
-      then: ${{ compiler('fortran') }}
-    - if: not win
-      then: git
-    - if: not win
-      then: make
+      then:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler('fortran') }}
+        - git
+        - make
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
+      then:
+        - python
+        - cross-python_${{ target_platform }}
   host:
     - python
     - pip
