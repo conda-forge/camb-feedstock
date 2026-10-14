@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: camb
-  version: "2.0.4"
+  version: "2.0.5"
 
 package:
   name: ${{ name|lower }}
@@ -12,16 +12,16 @@ source:
   - if: unix
     then:
       url: https://pypi.org/packages/source/c/camb/camb-${{ version }}.tar.gz
-      sha256: 2f1f5f3b3964a3746693dc88a54218dca4ea049a04726f8177664c11d2d2616e
+      sha256: 9faae0e22d35f7b9e8cd93364ea238681a86e643bc68deb720a3745680e515a5
       patches:
         - makefile_flags_0001.patch
   - if: win
     then:
       url: https://camb.info/camb_wheel.php?package=camb&version=${{ version }}&template=py3-none-win_amd64
-      sha256: 279810713d6fd91056237d57e7980bee4d8d5a126051384e8c086dd70ee99417
+      sha256: 22886f6c217c55cadeba30a81159f1e33bc3927f25534f54a6e31c88b2366c03
 
 build:
-  number: 1
+  number: 0
   skip: match(python, "<3.11")
   script:
     - if: win
