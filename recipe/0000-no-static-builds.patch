@@ -1,0 +1,16 @@
+--- a/fortran/Makefile	2026-10-30 16:35:33
++++ b/fortran/Makefile	2026-10-30 16:35:43
+@@ -99,10 +99,10 @@
+ SFFLAGS = -dynamiclib #-fpic
+ ifneq ($(shell echo $(compiler_ver) | awk '{print ($$1 >= 14.0)}'),0)
+ LIBGFORTRAN_A := $(shell $(F90C) -print-file-name=libgfortran.a)
+-ifneq ($(shell [ -f "$(LIBGFORTRAN_A)" ] && echo yes),)
+-SFFLAGS += -static-libgfortran -static-libquadmath -static-libgcc
++# ifneq ($(shell [ -f "$(LIBGFORTRAN_A)" ] && echo yes),)
++# SFFLAGS += -static-libgfortran -static-libquadmath -static-libgcc
++# endif
+ endif
+-endif
+ else
+ SFFLAGS = -shared -fpic
+ endif
