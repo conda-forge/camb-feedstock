@@ -15,7 +15,9 @@ source:
   sha256: ${{ '1965db83f15fcfb0617fafb396c84f8309a51850792052e57040d8f2f9b63779' if unix else 'dc98ded515040ca2b26309ac2092c8fadddd024f2f38c99db30fc991e330bca0' }}
   patches:
     - if: unix
-      then: makefile_flags_0001.patch
+      then:
+        - makefile_flags_0001.patch
+        - 0000-no-static-builds.patch
 
 build:
   number: 2
